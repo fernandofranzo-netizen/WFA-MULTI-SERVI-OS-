@@ -1,0 +1,6 @@
+{
+  "name": "Franzo MultiServiços – Elétrica, Mecânica, Hidráulica, Solda e Alvenaria",
+  "description": "Site profissional para divulgação de serviços, portfólio de projetos, agendamento de orçamentos online e via WhatsApp, blog técnico, relatórios de acesso e painel administrativo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
