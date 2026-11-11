@@ -13,6 +13,7 @@ import {
   Facebook,
   Twitter
 } from 'lucide-react';
+import { OfficialWhatsAppLogo } from './OfficialSocialIcons';
 import { BlogPost, ServiceCategory } from '../types';
 
 interface BlogSectionProps {
@@ -56,13 +57,13 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider mb-3">
             <BookOpen className="w-3.5 h-3.5 text-orange-400" />
-            WFA MultiServiços • Dicas & Prevenção
+            WFA Metais • Serralheria & Dicas Técnicas
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
             Blog & Dicas do Especialista
           </h2>
           <p className="mt-3 text-slate-400 text-sm sm:text-base">
-            Artigos técnicos da equipe WFA para ajudar você a economizar, prevenir acidentes elétricos, evitar vazamentos e conservar seu imóvel ou maquinário.
+            Artigos e orientações técnicas de Wellington Silva Nascimento e equipe WFA para conservação de portões, grades, estruturas metálicas e manutenções em geral.
           </p>
         </div>
 
@@ -155,9 +156,9 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
                 <button
                   onClick={() => handleShare('whatsapp', selectedPost)}
                   title="Compartilhar no WhatsApp"
-                  className="p-1.5 rounded-lg bg-emerald-600/30 text-emerald-400 hover:bg-emerald-600 hover:text-white transition-all cursor-pointer"
+                  className="p-1.5 rounded-lg hover:scale-110 transition-transform cursor-pointer"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <OfficialWhatsAppLogo className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => handleShare('facebook', selectedPost)}
@@ -221,21 +222,21 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
             <div className="bg-slate-950 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
                 <h4 className="text-white font-bold text-sm">
-                  Precisa de uma mão profissional no seu imóvel?
+                  Precisa de um projeto sob medida ou reparo profissional?
                 </h4>
                 <p className="text-slate-400 text-xs mt-0.5">
-                  Evite dores de cabeça com soluções caseiras. A equipe WFA faz com garantia e ferramentas apropriadas.
+                  Fale com Wellington Silva Nascimento e equipe WFA Metais. Qualidade, resistência e compromisso com você!
                 </p>
               </div>
-              <button
-                onClick={() => {
-                  setSelectedPost(null);
-                  onOpenLeadModal();
-                }}
-                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 text-slate-950 font-black text-xs shrink-0 cursor-pointer shadow-lg shadow-orange-500/20"
+              <a
+                href="https://wa.me/558499637378?text=Ol%C3%A1%20WFA%20Metais!%20Li%20o%20artigo%20no%20blog%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 text-white font-black text-xs shrink-0 cursor-pointer shadow-lg shadow-emerald-950/40"
               >
-                Agendar Visita Técnica WFA
-              </button>
+                <OfficialWhatsAppLogo className="w-4 h-4" />
+                Solicitar Orçamento no WhatsApp
+              </a>
             </div>
 
           </div>

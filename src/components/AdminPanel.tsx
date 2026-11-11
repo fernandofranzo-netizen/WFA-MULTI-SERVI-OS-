@@ -27,8 +27,8 @@ import {
   Download,
   Eye,
   Check,
-  AlertCircle
 } from 'lucide-react';
+import { OfficialWhatsAppLogo } from './OfficialSocialIcons';
 
 interface AdminPanelProps {
   isOpen: boolean;
@@ -225,18 +225,18 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
         {/* Top bar with WFA logo */}
         <div className="bg-slate-950 px-6 py-4 border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-900 border-2 border-orange-500/60 p-0.5 flex items-center justify-center shrink-0">
+            <div className="h-10 rounded-xl overflow-hidden bg-slate-900 border-2 border-orange-500/60 p-1 flex items-center justify-center shrink-0 px-2">
               <img
-                src="/assets/aistudio/IMG-20261106-WA0193_9a0aed0a.jpg"
-                alt="WFA Logo"
-                className="w-full h-full object-contain"
+                src="/assets/aistudio/image_dc0dbf4b.png"
+                alt="WFA Metais Logo"
+                className="h-full w-auto object-contain"
               />
             </div>
             <div>
               <h2 className="text-lg font-black text-white flex items-center gap-2">
-                Painel Administrativo WFA MultiServiços
+                Painel Administrativo WFA METAIS
                 <span className="text-[10px] bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 px-2 py-0.5 rounded font-black uppercase">
-                  Gestão WFA Pro
+                  Gestão Pro
                 </span>
               </h2>
               <p className="text-xs text-slate-400">
@@ -257,15 +257,15 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
         {!isAuthenticated ? (
           <div className="flex-1 flex items-center justify-center p-6 bg-slate-950/60">
             <div className="w-full max-w-md bg-slate-900 border-2 border-blue-500/30 rounded-3xl p-8 text-center shadow-2xl">
-              <div className="w-20 h-20 rounded-2xl bg-slate-950 border-2 border-orange-500/70 p-1 flex items-center justify-center mx-auto mb-4 shadow-xl">
+              <div className="h-20 rounded-2xl bg-slate-950 border-2 border-orange-500/70 p-2 flex items-center justify-center mx-auto mb-4 shadow-xl px-4">
                 <img
-                  src="/assets/aistudio/IMG-20261106-WA0193_9a0aed0a.jpg"
-                  alt="WFA MultiServiços"
-                  className="w-full h-full object-contain"
+                  src="/assets/aistudio/image_dc0dbf4b.png"
+                  alt="Logotipo WFA METAIS"
+                  className="h-full w-auto object-contain"
                 />
               </div>
               <h3 className="text-xl font-black text-white mb-1">
-                Acesso Restrito WFA MultiServiços
+                Acesso Restrito WFA METAIS
               </h3>
               <p className="text-xs text-slate-400 mb-6">
                 Painel administrativo para gerenciar fotos, leads e relatórios (Senha padrão: <code className="text-orange-400 font-mono font-bold">1234</code>).
@@ -578,7 +578,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                             onClick={() => handleReplyLeadWhatsApp(lead)}
                             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all cursor-pointer"
                           >
-                            <MessageCircle className="w-3.5 h-3.5" />
+                            <OfficialWhatsAppLogo className="w-3.5 h-3.5" />
                             Chamar no WhatsApp
                           </button>
                         </div>

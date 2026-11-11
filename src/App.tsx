@@ -24,7 +24,6 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { BlogSection } from './components/BlogSection';
 import { LeadCaptureModal } from './components/LeadCaptureModal';
 import { AdminPanel } from './components/AdminPanel';
-import { ChatAssistant } from './components/ChatAssistant';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { Footer } from './components/Footer';
 
@@ -263,9 +262,6 @@ export default function App() {
         onUpdateSEO={handleUpdateSEO}
         analytics={analytics}
       />
-
-      {/* Floating 24h AI Technical Chat Assistant (Gemini 3.8 Flash) */}
-      <ChatAssistant />
 
       {/* Floating WhatsApp Quick Action Button */}
       <WhatsAppButton />

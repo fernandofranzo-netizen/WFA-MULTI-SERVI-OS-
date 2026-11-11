@@ -1,6 +1,12 @@
 import { ServiceDetail, Project, Testimonial, BlogPost, SEOSettings, Lead } from '../types';
 
-export const WFA_LOGO_URL = '/assets/aistudio/IMG-20261106-WA0193_9a0aed0a.jpg';
+export const WFA_LOGO_URL = '/assets/aistudio/image_dc0dbf4b.png';
+export const WFA_BANNER_IMAGE = '/assets/aistudio/IMG-20261109-WA0123_fabed3be.jpg';
+export const WFA_PROPRIETARIO = 'Wellington Silva Nascimento';
+export const WFA_EMAIL = 'wellingtonsilvanascimento419@gmail.com';
+export const WFA_INSTAGRAM = 'wellingtonsilvanascimento419';
+export const WFA_PHONE = '(84) 99637-7378';
+export const WFA_PHONE_CLEAN = '558499637378';
 
 export const SERVICES_DATA: ServiceDetail[] = [
   {
@@ -27,7 +33,7 @@ export const SERVICES_DATA: ServiceDetail[] = [
       'Lâmpadas piscando ou oscilação repentina de voltagem'
     ],
     typicalTime: '1h a 1 dia',
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80'
+    image: '/assets/aistudio/IMG-20261107-WA0032_b4f7ebd5.jpg'
   },
   {
     id: 'mecanica',
@@ -309,9 +315,9 @@ Aqui estão os 5 sinais que merecem sua atenção imediata:
 
 Se você identificou algum desses itens, solicite uma vistoria técnica com medição térmica preventiva. Segurança não tem preço!
     `,
-    coverImageUrl: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80',
+    coverImageUrl: '/assets/aistudio/IMG-20261107-WA0032_b4f7ebd5.jpg',
     readTime: '4 min',
-    author: 'Fernando Franzo (WFA)',
+    author: 'Wellington Silva Nascimento (WFA Metais)',
     date: '02 Nov 2026',
     tags: ['Segurança', 'Prevenção', 'Fiação', 'Disjuntor', 'NBR 5410'],
     views: 842
@@ -341,7 +347,7 @@ Precisando de detecção eletrônica com geofone de ultrassom? Fale conosco para
     `,
     coverImageUrl: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80',
     readTime: '5 min',
-    author: 'Fernando Franzo (WFA)',
+    author: 'Wellington Silva Nascimento (WFA Metais)',
     date: '28 Out 2026',
     tags: ['Economia de Água', 'Caça Vazamento', 'Manutenção Predial'],
     views: 1120
@@ -359,17 +365,17 @@ Na serralheria e manutenção metálica, não existe um processo único para tud
 - **Soldagem MIG/MAG (Arame contínuo com gás)**
 Ideal para fabricação e reparo de portões, grades de ferro, tubos de metalon e chapas finas. Produz um cordão de solda rápido, com penetração excelente e quase nenhuma escória, garantindo soldas limpas e com grande resistência à tração.
 
-3. **Soldagem TIG (Tungstênio e Gás Inerte)**
+- **Soldagem TIG (Tungstênio e Gás Inerte)**
 É a rainha do acabamento visual e da precisão. Utilizada em aço inoxidável, corrimãos de escada, tubulações de alta pureza e recuperação de carcaças de alumínio. O cordão parece uma escama de peixe perfeita e dispensa desbaste pesado com esmerilhadeira.
 
 - **Eletrodo Revestido (MMA)**
 A mais robusta para campo aberto e obras pesadas. Excelente para soldagem de vigas estruturais, perfis de aço carbono grosso e reparos onde há vento ou ferrugem superficial.
 
-Na WFA MultiServiços levamos o equipamento correto diretamente até o seu imóvel para garantir soldas com garantia mecânica!
+Na WFA Metais levamos a melhor técnica e maquinário até você para garantir soldas com máxima resistência e durabilidade!
     `,
     coverImageUrl: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80',
     readTime: '6 min',
-    author: 'WFA MultiServiços',
+    author: 'Wellington Silva Nascimento (WFA Metais)',
     date: '15 Out 2026',
     tags: ['Serralheria', 'Solda MIG', 'Solda TIG', 'Estruturas Metálicas'],
     views: 654
@@ -391,11 +397,11 @@ Confira as boas práticas que adotamos em nossas obras:
 3. **Clipes Niveladores com Cunha**: Essenciais para garantir que não haja "dentes" entre as placas, propiciando um piso perfeitamente plano ao tato.
 4. **Respeito às Juntas de Dilatação**: Nunca assente porcelanato colado sem junta. Mesmo o porcelanato retificado precisa de pelo menos 1mm a 2mm para absorver a expansão térmica natural da edificação.
 
-Planeje sua reforma com a equipe técnica da WFA e cuide de cada detalhe com nivelamento a laser!
+Planeje sua reforma com a equipe da WFA Metais e cuide de cada detalhe com nivelamento e acabamento primoroso!
     `,
     coverImageUrl: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=800&q=80',
     readTime: '5 min',
-    author: 'WFA MultiServiços',
+    author: 'Wellington Silva Nascimento (WFA Metais)',
     date: '04 Out 2026',
     tags: ['Reforma', 'Pisos', 'Porcelanato', 'Alvenaria Fina'],
     views: 930
@@ -403,13 +409,13 @@ Planeje sua reforma com a equipe técnica da WFA e cuide de cada detalhe com niv
 ];
 
 export const DEFAULT_SEO_SETTINGS: SEOSettings = {
-  metaTitle: 'WFA MultiServiços – Elétrica, Mecânica, Hidráulica, Solda e Alvenaria',
-  metaDescription: 'WFA MultiServiços: Soluções completas com garantia, pontualidade e transparência. Agende sua visita técnica com a WFA via WhatsApp!',
-  keywords: 'WFA, WFA multiserviços, eletricista, mecanico de manutencao, encanador hidraulico, soldador mig tig, pedreiro reformas alvenaria, conserto portao basculante, troca disjuntor, visita tecnica',
-  canonicalUrl: 'https://wfamultiservicos.com.br',
-  googleBusinessName: 'WFA MultiServiços Especializados',
-  googleMapsLink: 'https://maps.google.com/?q=WFA+MultiServicos',
-  serviceArea: 'Atendimento Especializado Residencial, Comercial e Predial',
-  phoneWhatsapp: '+55 (84) 99673-7378',
-  emailContact: 'contato@wfamultiservicos.com.br'
+  metaTitle: 'WFA Metais – Serralheria em Geral | Grades, Portões, Estruturas e Soldas',
+  metaDescription: 'WFA Metais: Serralheria em geral com qualidade, resistência e compromisso com você! Solicite seu orçamento com Wellington Silva Nascimento via WhatsApp.',
+  keywords: 'WFA Metais, serralheria, grades, portoes, estruturas metalicas, soldas em geral, servicos personalizados, Wellington Silva Nascimento, serralheiro, soldador',
+  canonicalUrl: 'https://wfametais.com.br',
+  googleBusinessName: 'WFA Metais - Serralheria em Geral',
+  googleMapsLink: 'https://maps.google.com/?q=WFA+Metais',
+  serviceArea: 'Atendimento Especializado em Serralheria e Manutenção',
+  phoneWhatsapp: '+55 (84) 99637-7378',
+  emailContact: 'wellingtonsilvanascimento419@gmail.com'
 };

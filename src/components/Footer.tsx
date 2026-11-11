@@ -1,18 +1,10 @@
 import React from 'react';
 import { 
-  Wrench, 
-  Phone, 
-  Mail, 
-  MapPin, 
   ShieldCheck, 
   Clock, 
-  Instagram, 
-  Facebook, 
-  Linkedin, 
-  Youtube,
   Lock
 } from 'lucide-react';
-import { WhatsAppIcon } from './WhatsAppIcon';
+import { OfficialWhatsAppLogo, OfficialInstagramLogo, OfficialEmailLogo } from './OfficialSocialIcons';
 
 interface FooterProps {
   onOpenLeadModal: (service?: string) => void;
@@ -21,7 +13,7 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({
-  onOpenLeadModal,
+  onOpenLeadModal: _onOpenLeadModal,
   onOpenAdminModal,
   onNavigateSection,
 }) => {
@@ -34,71 +26,67 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Brand info (2 cols on lg) */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center space-x-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-slate-900 border-2 border-orange-500/60 p-1 flex items-center justify-center shadow-lg shadow-blue-950/40">
+              <div className="h-14 rounded-2xl bg-slate-900 border-2 border-orange-500/60 p-1.5 overflow-hidden flex items-center justify-center shadow-lg shadow-blue-950/40 px-2.5">
                 <img
-                  src="/assets/aistudio/IMG-20261106-WA0193_9a0aed0a.jpg"
-                  alt="WFA MultiServiços"
-                  className="w-full h-full object-contain"
+                  src="/assets/aistudio/image_dc0dbf4b.png"
+                  alt="Logotipo WFA METAIS"
+                  className="h-10 w-auto object-contain"
                 />
               </div>
               <div>
                 <span className="text-2xl font-black text-white tracking-tight font-mono flex items-center">
-                  W<span className="text-orange-500">F</span>A
+                  W<span className="text-orange-500">F</span>A <span className="text-blue-400 ml-1.5 text-xl">METAIS</span>
                 </span>
-                <span className="text-[10px] text-blue-400 font-bold uppercase tracking-wider block">
-                  MultiServiços
+                <span className="text-[10px] text-amber-400 font-bold uppercase tracking-wider block">
+                  Serralheria em Geral
                 </span>
               </div>
             </div>
 
             <p className="text-slate-300 leading-relaxed max-w-sm">
-              Prestação de serviços técnicos da WFA com mais de 10 anos de experiência comprovada em Elétrica, Mecânica, Hidráulica, Soldagem e Alvenaria. Rigor técnico, pontualidade e transparência em cada projeto.
+              <strong className="text-white font-semibold">WFA METAIS</strong> — Sob a direção de <strong className="text-amber-400">Wellington Silva Nascimento</strong>. Especialistas em Grades, Portões, Estruturas Metálicas, Soldas em Geral e Serviços Personalizados.
+            </p>
+
+            <p className="text-amber-400 italic text-xs font-serif">
+              "Qualidade, Resistência e Compromisso com você!"
             </p>
 
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://instagram.com"
+                href="https://wa.me/558499637378"
                 target="_blank"
                 rel="noreferrer"
-                title="Instagram"
-                className="w-8 h-8 rounded-lg bg-slate-900 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors"
+                title="WhatsApp Oficial: (84) 99637-7378"
+                aria-label="WhatsApp Oficial"
+                className="hover:scale-110 active:scale-95 transition-transform"
               >
-                <Instagram className="w-4 h-4" />
+                <OfficialWhatsAppLogo className="w-8 h-8" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://instagram.com/wellingtonsilvanascimento419"
                 target="_blank"
                 rel="noreferrer"
-                title="Facebook"
-                className="w-8 h-8 rounded-lg bg-slate-900 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors"
+                title="Instagram Oficial: @wellingtonsilvanascimento419"
+                aria-label="Instagram Oficial"
+                className="hover:scale-110 active:scale-95 transition-transform"
               >
-                <Facebook className="w-4 h-4" />
+                <OfficialInstagramLogo className="w-8 h-8" />
               </a>
               <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                title="LinkedIn"
-                className="w-8 h-8 rounded-lg bg-slate-900 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors"
+                href="mailto:wellingtonsilvanascimento419@gmail.com"
+                title="E-mail Oficial: wellingtonsilvanascimento419@gmail.com"
+                aria-label="E-mail Oficial"
+                className="hover:scale-110 active:scale-95 transition-transform"
               >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noreferrer"
-                title="YouTube"
-                className="w-8 h-8 rounded-lg bg-slate-900 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors"
-              >
-                <Youtube className="w-4 h-4" />
+                <OfficialEmailLogo className="w-8 h-8" />
               </a>
             </div>
           </div>
 
-          {/* Services Navigation */}
+          {/* Specialties Navigation */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-3">
-              Serviços Prestados
+              Especialidades WFA
             </h4>
             <ul className="space-y-2">
               <li>
@@ -106,7 +94,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onNavigateSection('servicos')}
                   className="hover:text-amber-400 transition-colors text-left"
                 >
-                  Manutenção Elétrica
+                  Grades de Proteção
                 </button>
               </li>
               <li>
@@ -114,7 +102,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onNavigateSection('servicos')}
                   className="hover:text-amber-400 transition-colors text-left"
                 >
-                  Manutenção Mecânica
+                  Portões Basculantes & Deslizantes
                 </button>
               </li>
               <li>
@@ -122,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onNavigateSection('servicos')}
                   className="hover:text-amber-400 transition-colors text-left"
                 >
-                  Hidráulica & Vazamentos
+                  Estruturas Metálicas & Galpões
                 </button>
               </li>
               <li>
@@ -130,7 +118,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onNavigateSection('servicos')}
                   className="hover:text-amber-400 transition-colors text-left"
                 >
-                  Soldagem TIG, MIG & Eletrodo
+                  Soldas em Geral (MIG / TIG / Eletrodo)
                 </button>
               </li>
               <li>
@@ -138,24 +126,38 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onNavigateSection('servicos')}
                   className="hover:text-amber-400 transition-colors text-left"
                 >
-                  Alvenaria, Pisos & Reformas
+                  Serviços Personalizados
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Quick links & Regiões */}
+          {/* Service areas / Destaques */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-3">
-              Regiões Atendidas
+              Diferenciais WFA Metais
             </h4>
-            <ul className="space-y-1.5 text-slate-400">
-              <li>• São Paulo (Capital)</li>
-              <li>• Zona Sul & Zona Oeste</li>
-              <li>• Zona Leste & Zona Norte</li>
-              <li>• Santo André, São Bernardo, SCS</li>
-              <li>• Barueri, Alphaville & Osasco</li>
-              <li>• Guarulhos & Região</li>
+            <ul className="space-y-2 text-slate-400">
+              <li className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span>Aço e ferro de alta durabilidade</span>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span>Solda com acabamento industrial</span>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span>Pintura antiferrugem e eletrostática</span>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span>Projetos sob medida residencial e comercial</span>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span>Cumprimento rigoroso de prazos</span>
+              </li>
             </ul>
           </div>
 
@@ -166,13 +168,21 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <div className="space-y-2.5">
               <a
-                href="https://wa.me/5584996737378"
+                href="https://wa.me/558499637378"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold"
+                className="flex items-center gap-2.5 text-emerald-400 hover:text-emerald-300 font-bold text-sm group"
               >
-                <WhatsAppIcon className="w-3.5 h-3.5" />
-                (84) 99673-7378
+                <OfficialWhatsAppLogo className="w-5 h-5 shrink-0 group-hover:scale-110 transition-transform" />
+                <span>(84) 99637-7378</span>
+              </a>
+
+              <a
+                href="mailto:wellingtonsilvanascimento419@gmail.com"
+                className="flex items-center gap-2.5 text-slate-300 hover:text-red-400 transition-colors text-[11px] break-all group"
+              >
+                <OfficialEmailLogo className="w-5 h-5 shrink-0 group-hover:scale-110 transition-transform" />
+                <span>wellingtonsilvanascimento419@gmail.com</span>
               </a>
 
               <div className="flex items-center gap-2 text-slate-300">
@@ -182,16 +192,19 @@ export const Footer: React.FC<FooterProps> = ({
 
               <div className="flex items-center gap-2 text-slate-300">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>Garantia de Mão de Obra</span>
+                <span>Garantia e Nota Fiscal</span>
               </div>
 
               <div className="pt-2">
-                <button
-                  onClick={() => onOpenLeadModal()}
-                  className="w-full py-2.5 px-3 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 text-slate-950 font-bold text-xs shadow-md transition-all cursor-pointer"
+                <a
+                  href="https://wa.me/558499637378?text=Ol%C3%A1%20WFA%20Metais!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full py-2.5 px-3 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2"
                 >
-                  Agendar Visita Técnica
-                </button>
+                  <OfficialWhatsAppLogo className="w-4 h-4" />
+                  Solicite seu Orçamento no WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -202,7 +215,7 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="mt-12 pt-8 border-t border-slate-900 text-[11px] text-slate-600 space-y-2">
           <p className="font-semibold text-slate-500">Termos de Pesquisa Local (Google SEO):</p>
           <p className="leading-relaxed">
-            Eletricista residencial e predial • Manutenção mecânica de motores e bombas • Conserto de vazamentos e encanador profissional • Solda de portão basculante MIG TIG • Reforma de alvenaria e assentamento de porcelanato • Instalação de quadro de distribuição disjuntores DIN • Troca de tubulação Tigre PPR • Agendar visita técnica prestador de serviços WFA MultiServiços.
+            WFA Metais • Serralheria em Geral • Wellington Silva Nascimento • Grades de proteção para janelas e muros • Fabricação e reforma de portões basculantes e de correr • Estruturas metálicas e mezaninos • Soldas em geral MIG TIG e eletrodo • Serviços personalizados em ferro e aço • Contato WhatsApp (84) 99637-7378 • Orçamento rápido e transparente.
           </p>
         </div>
       </div>
@@ -211,7 +224,7 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="bg-slate-900 border-t border-slate-800/80 px-4 py-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-slate-500 text-[11px]">
           <div>
-            © {new Date().getFullYear()} WFA MultiServiços. Todos os direitos reservados. CNPJ e Laudos Técnicos disponíveis.
+            © {new Date().getFullYear()} WFA METAIS — Serralheria em Geral. Proprietário Wellington Silva Nascimento. Todos os direitos reservados.
           </div>
           <div className="flex items-center gap-4">
             <button

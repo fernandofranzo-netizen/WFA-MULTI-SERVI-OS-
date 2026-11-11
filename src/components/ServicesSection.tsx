@@ -12,7 +12,7 @@ import {
   ChevronRight,
   Info
 } from 'lucide-react';
-import { WhatsAppIcon } from './WhatsAppIcon';
+import { OfficialWhatsAppLogo } from './OfficialSocialIcons';
 import { SERVICES_DATA } from '../data/mockData';
 import { ServiceCategory, ServiceDetail } from '../types';
 
@@ -62,9 +62,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
   const openWhatsAppForService = (service: ServiceDetail) => {
     const text = encodeURIComponent(
-      `Olá WFA MultiServiços! Gostaria de agendar uma visita técnica para o serviço de ${service.name}.`
+      `Olá WFA Metais! Gostaria de solicitar um orçamento para o serviço de ${service.name}.`
     );
-    window.open(`https://wa.me/5584996737378?text=${text}`, '_blank');
+    window.open(`https://wa.me/558499637378?text=${text}`, '_blank');
   };
 
   const filteredServices = activeTab === 'todos' 
@@ -79,13 +79,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider mb-3">
             <Wrench className="w-3.5 h-3.5 text-orange-400" />
-            WFA MultiServiços • 5 Especialidades Técnicas
+            WFA Metais • Serralheria em Geral & Serviços Especializados
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-            Nossos Serviços Especializados
+            Nossos Serviços e Especialidades
           </h2>
           <p className="mt-3 text-slate-300 text-base sm:text-lg">
-            Da pequena manutenção residencial à parada programada industrial. Conheça as 5 áreas que compõem o emblema da WFA, executadas com excelência e ferramental próprio.
+            Grades, portões, estruturas metálicas, soldas e manutenções com alto rigor técnico, acabamento primoroso e materiais de primeira linha.
           </p>
 
           {/* Filter tabs */}
@@ -98,7 +98,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
               }`}
             >
-              Todos os Serviços WFA (5)
+              Todos os Serviços (5)
             </button>
             {SERVICES_DATA.map((srv) => (
               <button
@@ -127,26 +127,28 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               )}`}
             >
               {/* Image banner */}
-              <div className="relative h-48 overflow-hidden bg-slate-900">
+              <div className="relative h-52 sm:h-56 overflow-hidden bg-slate-900">
                 <img
                   src={service.image}
                   alt={service.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
                 
                 {/* Badge top-right */}
                 <div className="absolute top-3 right-3 bg-slate-900/90 backdrop-blur-md border border-slate-700/80 text-amber-400 text-xs font-bold px-2.5 py-1 rounded-md shadow">
                   {service.badge}
                 </div>
 
-                {/* Service Icon Pill */}
-                <div className="absolute bottom-3 left-4 flex items-center gap-2 bg-slate-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-700">
-                  {getIcon(service.id)}
-                  <span className="text-xs font-bold text-white uppercase tracking-wider">
-                    {service.name}
-                  </span>
-                </div>
+                {/* Service Icon Pill (rendered when image does not have an integrated graphic banner) */}
+                {service.id !== 'eletrica' && (
+                  <div className="absolute bottom-3 left-4 flex items-center gap-2 bg-slate-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-700">
+                    {getIcon(service.id)}
+                    <span className="text-xs font-bold text-white uppercase tracking-wider">
+                      {service.name}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Card body */}
@@ -204,20 +206,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     </button>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="pt-1">
                     <button
                       onClick={() => openWhatsAppForService(service)}
-                      className="inline-flex items-center justify-center px-3 py-2.5 rounded-xl text-xs font-bold bg-emerald-600/90 hover:bg-emerald-600 text-white transition-all cursor-pointer"
+                      className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white shadow-md shadow-emerald-950/40 transition-all cursor-pointer gap-2"
                     >
-                      <WhatsAppIcon className="w-3.5 h-3.5 mr-1.5" />
-                      WhatsApp
-                    </button>
-                    <button
-                      onClick={() => onOpenLeadModal(service.id)}
-                      className="inline-flex items-center justify-center px-3 py-2.5 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all cursor-pointer"
-                    >
-                      <Calendar className="w-3.5 h-3.5 mr-1.5" />
-                      Agendar Visita Técnica
+                      <OfficialWhatsAppLogo className="w-5 h-5" />
+                      Solicitar Orçamento no WhatsApp
                     </button>
                   </div>
                 </div>
@@ -288,24 +283,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-slate-800">
-              <button
-                onClick={() => {
-                  const s = modalService.id;
-                  setModalService(null);
-                  onOpenLeadModal(s);
-                }}
-                className="flex-1 py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm flex items-center justify-center gap-2"
-              >
-                <Calendar className="w-4 h-4" />
-                Agendar Visita Técnica para {modalService.name}
-              </button>
+            <div className="pt-4 border-t border-slate-800">
               <button
                 onClick={() => openWhatsAppForService(modalService)}
-                className="py-3 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-2"
+                className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg cursor-pointer"
               >
-                <WhatsAppIcon className="w-4 h-4" />
-                Conversar no WhatsApp
+                <OfficialWhatsAppLogo className="w-5 h-5" />
+                Solicitar Orçamento no WhatsApp
               </button>
             </div>
           </div>

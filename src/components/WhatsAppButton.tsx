@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Zap, Droplets, Flame, Hammer, Wrench, AlertTriangle, Calendar } from 'lucide-react';
-import { WhatsAppIcon } from './WhatsAppIcon';
+import { OfficialWhatsAppLogo } from './OfficialSocialIcons';
 
 export const WhatsAppButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,9 +13,9 @@ export const WhatsAppButton: React.FC = () => {
       body: JSON.stringify({ eventType: 'whatsapp_click' }),
     }).catch(() => {});
 
-    const baseText = customMessage || 'Olá WFA MultiServiços! Acessei seu site e gostaria de agendar uma visita técnica.';
+    const baseText = customMessage || 'Olá WFA Metais! Acessei seu site e gostaria de solicitar um orçamento.';
     const text = encodeURIComponent(baseText);
-    window.open(`https://wa.me/5584996737378?text=${text}`, '_blank');
+    window.open(`https://wa.me/558499637378?text=${text}`, '_blank');
     setIsOpen(false);
   };
 
@@ -25,15 +25,12 @@ export const WhatsAppButton: React.FC = () => {
       {isOpen && (
         <div className="mb-3 w-72 sm:w-80 rounded-3xl bg-slate-900 border-2 border-emerald-500/40 p-4 shadow-2xl animate-fade-in text-xs space-y-2">
           <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg overflow-hidden bg-slate-950 border border-slate-700">
-                <img
-                  src="/assets/aistudio/IMG-20261106-WA0193_9a0aed0a.jpg"
-                  alt="WFA"
-                  className="w-full h-full object-contain"
-                />
+            <div className="flex items-center gap-2.5">
+              <OfficialWhatsAppLogo className="w-8 h-8 shrink-0" />
+              <div>
+                <strong className="text-white text-xs block">WhatsApp Oficial</strong>
+                <span className="text-[10px] text-emerald-400 font-semibold">(84) 99637-7378</span>
               </div>
-              <strong className="text-white text-xs">WhatsApp WFA MultiServiços</strong>
             </div>
             <button
               onClick={() => setIsOpen(false)}
@@ -44,69 +41,61 @@ export const WhatsAppButton: React.FC = () => {
           </div>
 
           <p className="text-slate-300 text-[11px]">
-            Selecione para agendar visita técnica ou falar com a equipe WFA:
+            Selecione o serviço para solicitar seu orçamento diretamente no WhatsApp:
           </p>
 
           <div className="space-y-1.5 pt-1">
             <button
-              onClick={() => handleOpenWhatsApp('🚨 EMERGÊNCIA WFA: Preciso de atendimento urgente para reparo no meu imóvel.')}
-              className="w-full text-left p-2 rounded-xl bg-red-950/40 border border-red-800/60 text-red-300 hover:bg-red-900/60 transition-colors flex items-center gap-2 font-bold cursor-pointer"
+              onClick={() => handleOpenWhatsApp('Olá WFA Metais! Gostaria de um orçamento para Grades e Portões.')}
+              className="w-full text-left p-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-200 transition-colors flex items-center gap-2 cursor-pointer border border-slate-800"
             >
-              <AlertTriangle className="w-3.5 h-3.5 text-red-400 shrink-0" />
-              <span>Emergência 24 Horas</span>
+              <Hammer className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span>Orçamento de Grades & Portões</span>
             </button>
 
             <button
-              onClick={() => handleOpenWhatsApp('Olá WFA MultiServiços! Gostaria de agendar uma visita técnica para Manutenção Elétrica.')}
-              className="w-full text-left p-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-200 transition-colors flex items-center gap-2 cursor-pointer"
-            >
-              <Zap className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span>Visita Técnica de Elétrica</span>
-            </button>
-
-            <button
-              onClick={() => handleOpenWhatsApp('Olá WFA MultiServiços! Gostaria de agendar uma visita técnica para Manutenção Hidráulica / Vazamento.')}
-              className="w-full text-left p-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-200 transition-colors flex items-center gap-2 cursor-pointer"
-            >
-              <Droplets className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-              <span>Visita Técnica de Hidráulica</span>
-            </button>
-
-            <button
-              onClick={() => handleOpenWhatsApp('Olá WFA MultiServiços! Gostaria de agendar uma visita técnica para Soldagem / Portão / Estrutura.')}
-              className="w-full text-left p-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-200 transition-colors flex items-center gap-2 cursor-pointer"
-            >
-              <Flame className="w-3.5 h-3.5 text-orange-400 shrink-0" />
-              <span>Visita Técnica de Solda</span>
-            </button>
-
-            <button
-              onClick={() => handleOpenWhatsApp('Olá WFA MultiServiços! Gostaria de agendar uma visita técnica para Alvenaria, Piso ou Reforma.')}
-              className="w-full text-left p-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-200 transition-colors flex items-center gap-2 cursor-pointer"
-            >
-              <Hammer className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-              <span>Visita Técnica de Alvenaria</span>
-            </button>
-
-            <button
-              onClick={() => handleOpenWhatsApp('Olá WFA MultiServiços! Gostaria de agendar uma visita técnica para Manutenção Mecânica de motor ou maquinário.')}
-              className="w-full text-left p-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-200 transition-colors flex items-center gap-2 cursor-pointer"
+              onClick={() => handleOpenWhatsApp('Olá WFA Metais! Gostaria de um orçamento para Estruturas Metálicas.')}
+              className="w-full text-left p-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-200 transition-colors flex items-center gap-2 cursor-pointer border border-slate-800"
             >
               <Wrench className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-              <span>Visita Técnica de Mecânica</span>
+              <span>Orçamento de Estruturas Metálicas</span>
+            </button>
+
+            <button
+              onClick={() => handleOpenWhatsApp('Olá WFA Metais! Gostaria de um orçamento para Soldas em Geral.')}
+              className="w-full text-left p-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-200 transition-colors flex items-center gap-2 cursor-pointer border border-slate-800"
+            >
+              <Flame className="w-3.5 h-3.5 text-orange-400 shrink-0" />
+              <span>Soldas em Geral (MIG / TIG)</span>
+            </button>
+
+            <button
+              onClick={() => handleOpenWhatsApp('Olá WFA Metais! Gostaria de um orçamento para Serviços Personalizados em Serralheria.')}
+              className="w-full text-left p-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-200 transition-colors flex items-center gap-2 cursor-pointer border border-slate-800"
+            >
+              <Zap className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+              <span>Serviços Personalizados</span>
+            </button>
+
+            <button
+              onClick={() => handleOpenWhatsApp('Olá WFA Metais! Gostaria de falar com Wellington para tirar dúvidas ou fazer orçamento.')}
+              className="w-full text-left p-2 rounded-xl bg-emerald-950/40 border border-emerald-800/60 text-emerald-300 hover:bg-emerald-900/60 transition-colors flex items-center gap-2 font-bold cursor-pointer"
+            >
+              <OfficialWhatsAppLogo className="w-4 h-4 shrink-0" />
+              <span>Conversar no WhatsApp</span>
             </button>
           </div>
         </div>
       )}
 
-      {/* Main Floating Trigger Button */}
+      {/* Main Floating Trigger Button: Only Official Logomark */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        title="Falar no WhatsApp"
-        className="flex items-center gap-2 px-4 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-2xl shadow-emerald-950/60 hover:scale-105 transition-all cursor-pointer group"
+        title="WhatsApp Oficial: (84) 99637-7378"
+        aria-label="Abrir WhatsApp Oficial"
+        className="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-emerald-950/80 hover:scale-110 active:scale-95 transition-all cursor-pointer group bg-transparent"
       >
-        <WhatsAppIcon className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-        <span className="hidden sm:inline">WhatsApp</span>
+        <OfficialWhatsAppLogo className="w-14 h-14 drop-shadow-xl group-hover:rotate-6 transition-transform" />
       </button>
     </div>
   );

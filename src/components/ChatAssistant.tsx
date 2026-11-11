@@ -27,7 +27,7 @@ export const ChatAssistant: React.FC = () => {
     {
       id: 'msg-1',
       sender: 'bot',
-      text: 'Olá! Sou o assistente virtual da WFA MultiServiços 🔧\n\nPosso tirar dúvidas sobre nossos serviços de Elétrica, Mecânica, Hidráulica, Solda e Alvenaria, ou ajudar a agendar uma visita técnica no seu endereço. Como posso te ajudar hoje?',
+      text: 'Olá! Sou o assistente virtual da WFA METAIS (Serralheria em Geral) 🔧\n\nPosso tirar dúvidas sobre Grades, Portões, Estruturas Metálicas, Soldas em Geral e Serviços Personalizados de Wellington Silva Nascimento, ou te ajudar a solicitar um orçamento no WhatsApp. Como posso te ajudar hoje?',
       timestamp: 'Agora',
     },
   ]);
@@ -45,11 +45,11 @@ export const ChatAssistant: React.FC = () => {
   }, [messages, isOpen]);
 
   const quickQuestions = [
-    '🚨 Emergência com disjuntor caindo',
-    '💧 Vazamento ou cano furado',
-    '🚪 Solda e conserto de portão',
-    '🧱 Reforma de piso e alvenaria',
-    '⏱️ Como funciona a visita técnica WFA?',
+    '🚪 Orçamento de Portão Basculante',
+    '🛡️ Grades de Proteção para Casa',
+    '🏗️ Estrutura Metálica e Mezanino',
+    '🔥 Solda e Reparo de Ferragens',
+    '💬 Falar com Wellington no WhatsApp',
   ];
 
   const handleSendMessage = async (textToSend?: string) => {
@@ -82,7 +82,7 @@ export const ChatAssistant: React.FC = () => {
       const botMsg: ChatMessage = {
         id: `bot-${Date.now()}`,
         sender: 'bot',
-        text: data.reply || 'Entendido! Recomendo que você nos envie uma foto ou mensagem no WhatsApp para combinarmos a visita técnica.',
+        text: data.reply || 'Entendido! Recomendo que você nos envie as medidas ou fotos no WhatsApp para fazermos seu orçamento sem compromisso.',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
 
@@ -92,7 +92,7 @@ export const ChatAssistant: React.FC = () => {
       const botFallback: ChatMessage = {
         id: `bot-${Date.now()}`,
         sender: 'bot',
-        text: 'A WFA atende prontamente serviços de Elétrica, Mecânica, Hidráulica, Soldagem e Alvenaria com garantia formal e pontualidade. Se preferir atendimento imediato, clique no botão do WhatsApp abaixo para agendar sua visita técnica com a equipe WFA!',
+        text: 'A WFA METAIS é especializada em Grades, Portões, Estruturas Metálicas, Soldas em Geral e Serviços Personalizados, liderada por Wellington Silva Nascimento. Para solicitar seu orçamento imediato, clique no botão do WhatsApp abaixo!',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
       setMessages((prev) => [...prev, botFallback]);
@@ -109,9 +109,9 @@ export const ChatAssistant: React.FC = () => {
       .join(' | ');
 
     const text = encodeURIComponent(
-      `Olá WFA MultiServiços! Estava conversando com seu assistente no site sobre: "${recentQueries || 'agendamento de visita técnica'}" e gostaria de continuar o atendimento por aqui.`
+      `Olá WFA Metais! Estava no site tirando dúvidas sobre "${recentQueries || 'solicitação de orçamento'}" e gostaria de continuar o atendimento com Wellington Silva Nascimento.`
     );
-    window.open(`https://wa.me/5584996737378?text=${text}`, '_blank');
+    window.open(`https://wa.me/558499637378?text=${text}`, '_blank');
   };
 
   return (
@@ -122,17 +122,17 @@ export const ChatAssistant: React.FC = () => {
           onClick={() => setIsOpen(true)}
           className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-slate-950 font-black text-sm shadow-2xl shadow-orange-500/40 border-2 border-blue-400/30 transition-all hover:scale-105 cursor-pointer"
         >
-          <div className="relative w-7 h-7 rounded-full overflow-hidden bg-slate-950 border border-slate-700 shrink-0">
+          <div className="relative h-7 rounded-lg overflow-hidden bg-slate-950 border border-slate-700 shrink-0 px-1 flex items-center justify-center">
             <img
-              src="/assets/aistudio/IMG-20261106-WA0193_9a0aed0a.jpg"
-              alt="Logo WFA"
-              className="w-full h-full object-contain"
+              src="/assets/aistudio/image_dc0dbf4b.png"
+              alt="Logotipo WFA Metais"
+              className="h-full w-auto object-contain"
             />
             <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border border-slate-950" />
           </div>
-          <span>Dúvidas WFA</span>
+          <span>Dúvidas WFA Metais</span>
           <span className="hidden sm:inline text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-950/20 text-slate-950">
-            IA 24h
+            Online
           </span>
         </button>
       )}
@@ -143,21 +143,21 @@ export const ChatAssistant: React.FC = () => {
           {/* Header */}
           <div className="bg-slate-950 p-4 border-b border-slate-800 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-950 border border-orange-500/40 p-0.5 shadow-md flex items-center justify-center shrink-0">
+              <div className="h-10 rounded-xl overflow-hidden bg-slate-950 border border-orange-500/40 p-1 shadow-md flex items-center justify-center shrink-0 px-1.5">
                 <img
-                  src="/assets/aistudio/IMG-20261106-WA0193_9a0aed0a.jpg"
-                  alt="WFA Assistente"
-                  className="w-full h-full object-contain"
+                  src="/assets/aistudio/image_dc0dbf4b.png"
+                  alt="Logotipo WFA Metais"
+                  className="h-full w-auto object-contain"
                 />
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <h4 className="text-sm font-black text-white">Assistente WFA</h4>
+                  <h4 className="text-sm font-black text-white">Assistente WFA Metais</h4>
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 </div>
-                <p className="text-[10px] text-blue-400 flex items-center gap-1 font-semibold">
+                <p className="text-[10px] text-amber-400 flex items-center gap-1 font-semibold">
                   <ShieldCheck className="w-3 h-3 text-orange-400" />
-                  WFA MultiServiços 24h
+                  Wellington Silva Nascimento
                 </p>
               </div>
             </div>
@@ -228,12 +228,12 @@ export const ChatAssistant: React.FC = () => {
 
           {/* WhatsApp Direct Handoff banner */}
           <div className="px-3 py-1.5 bg-emerald-950/40 border-t border-emerald-900/40 flex items-center justify-between text-[11px]">
-            <span className="text-emerald-300">Prefere falar direto pelo WhatsApp?</span>
+            <span className="text-emerald-300">Deseja atendimento direto no WhatsApp?</span>
             <button
               onClick={handleWhatsAppHandoff}
               className="font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 underline cursor-pointer"
             >
-              <WhatsAppIcon className="w-3.5 h-3.5" /> Falar com a WFA
+              <WhatsAppIcon className="w-3.5 h-3.5" /> Falar com Wellington
             </button>
           </div>
 

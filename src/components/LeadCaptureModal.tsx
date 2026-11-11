@@ -16,7 +16,7 @@ import {
   Flame, 
   Hammer
 } from 'lucide-react';
-import { WhatsAppIcon } from './WhatsAppIcon';
+import { OfficialWhatsAppLogo } from './OfficialSocialIcons';
 import { ServiceCategory, Lead } from '../types';
 
 interface LeadCaptureModalProps {
@@ -117,16 +117,16 @@ export const LeadCaptureModal: React.FC<LeadCaptureModalProps> = ({
         }[urgency];
 
         const text = encodeURIComponent(
-          `*NOVA SOLICITAÇÃO DE VISITA TÉCNICA - WFA MULTISERVIÇOS*\n\n` +
+          `*NOVA SOLICITAÇÃO DE ORÇAMENTO - WFA METAIS*\n\n` +
           `👤 *Nome:* ${name}\n` +
           `📞 *Telefone:* ${phone}\n` +
-          `🔧 *Serviço a Inspecionar:* ${service.toUpperCase()}\n` +
+          `🔧 *Serviço:* ${service.toUpperCase()}\n` +
           `⚡ *Disponibilidade/Urgência:* ${urgencyText}\n` +
           `📍 *Local/Bairro:* ${address || 'A combinar'}\n\n` +
-          `📝 *Detalhes da Visita:* ${description || 'Agendamento de visita técnica no local'}`
+          `📝 *Detalhes:* ${description || 'Solicitação de orçamento'}`
         );
 
-        window.open(`https://wa.me/5584996737378?text=${text}`, '_blank');
+        window.open(`https://wa.me/558499637378?text=${text}`, '_blank');
       }
     } catch (error) {
       console.error('Erro ao enviar lead:', error);
@@ -178,21 +178,21 @@ export const LeadCaptureModal: React.FC<LeadCaptureModalProps> = ({
               <CheckCircle2 className="w-10 h-10" />
             </div>
             <h3 className="text-2xl font-black text-white">
-              Visita Técnica Solicitada com Sucesso!
+              Solicitação Enviada com Sucesso!
             </h3>
             <p className="text-slate-300 text-sm max-w-md mx-auto leading-relaxed">
-              Obrigado, <strong>{name}</strong>! Recebemos sua solicitação de visita técnica para serviços de{' '}
-              <strong className="text-orange-400 uppercase">{service}</strong>. A equipe da <strong>WFA MultiServiços</strong> entrará em contato em breve via WhatsApp ou ligação para confirmar o horário de atendimento.
+              Obrigado, <strong>{name}</strong>! Recebemos sua solicitação para serviços de{' '}
+              <strong className="text-orange-400 uppercase">{service}</strong>. Wellington Silva Nascimento e a equipe da <strong>WFA METAIS</strong> entrarão em contato em breve via WhatsApp.
             </p>
             <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
               <button
                 onClick={() => {
                   handleSubmit(new Event('submit') as any, true);
                 }}
-                className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-950/40 cursor-pointer"
+                className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-950/40 cursor-pointer gap-2"
               >
-                <WhatsAppIcon className="w-4 h-4 mr-2" />
-                Confirmar Agendamento no WhatsApp Agora
+                <OfficialWhatsAppLogo className="w-5 h-5" />
+                Continuar no WhatsApp Agora
               </button>
               <button
                 onClick={resetForm}
@@ -207,14 +207,14 @@ export const LeadCaptureModal: React.FC<LeadCaptureModalProps> = ({
             <div className="flex items-center gap-2 mb-1">
               <Calendar className="w-5 h-5 text-amber-400" />
               <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
-                Atendimento Técnico WFA
+                WFA METAIS • Wellington Silva Nascimento
               </span>
             </div>
             <h3 className="text-2xl font-black text-white mb-2">
-              Agendar Visita Técnica
+              Solicitar Orçamento
             </h3>
             <p className="text-xs text-slate-400 mb-6">
-              Preencha os dados abaixo para agendarmos a inspeção técnica presencial no seu endereço.
+              Preencha os dados abaixo para receber um orçamento transparente e detalhado.
             </p>
 
             <form onSubmit={(e) => handleSubmit(e, false)} className="space-y-4">
@@ -311,7 +311,7 @@ export const LeadCaptureModal: React.FC<LeadCaptureModalProps> = ({
                       required
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="(84) 99673-7378"
+                      placeholder="(84) 99637-7378"
                       className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500"
                     />
                   </div>
@@ -321,7 +321,7 @@ export const LeadCaptureModal: React.FC<LeadCaptureModalProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-semibold text-slate-300 mb-1">
-                    Bairro ou Endereço (Local da Visita Técnica)
+                    Bairro ou Cidade
                   </label>
                   <div className="relative">
                     <MapPin className="w-4 h-4 text-slate-500 absolute left-3 top-3" />
@@ -329,7 +329,7 @@ export const LeadCaptureModal: React.FC<LeadCaptureModalProps> = ({
                       type="text"
                       value={address}
                       onChange={(e) => setAddress(e.target.value)}
-                      placeholder="Ex: Seu bairro ou endereço"
+                      placeholder="Ex: Seu bairro ou cidade"
                       className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500"
                     />
                   </div>
@@ -352,13 +352,13 @@ export const LeadCaptureModal: React.FC<LeadCaptureModalProps> = ({
               {/* Description */}
               <div>
                 <label className="block text-xs font-semibold text-slate-300 mb-1">
-                  Descreva o problema ou o que precisa ser inspecionado na visita técnica:
+                  Descreva o que você precisa ou medidas do seu projeto:
                 </label>
                 <textarea
                   rows={3}
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  placeholder="Ex: O disjuntor cai quando ligo o chuveiro, preciso de uma visita técnica para inspecionar a fiação e o quadro."
+                  placeholder="Ex: Gostaria de um orçamento para grade de proteção de 2 janelas e um portão basculante de 3 metros..."
                   className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500"
                 />
               </div>
@@ -371,7 +371,7 @@ export const LeadCaptureModal: React.FC<LeadCaptureModalProps> = ({
                   className="flex-1 py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 >
                   <Calendar className="w-4 h-4" />
-                  {submitting ? 'Enviando...' : 'Agendar Visita Técnica'}
+                  {submitting ? 'Enviando...' : 'Solicitar Orçamento'}
                 </button>
 
                 <button
@@ -380,8 +380,8 @@ export const LeadCaptureModal: React.FC<LeadCaptureModalProps> = ({
                   disabled={submitting}
                   className="py-3 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <WhatsAppIcon className="w-4 h-4" />
-                  Agendar direto no WhatsApp
+                  <OfficialWhatsAppLogo className="w-5 h-5" />
+                  Enviar pelo WhatsApp
                 </button>
               </div>
 

@@ -14,6 +14,7 @@ import {
   ArrowRight,
   SplitSquareVertical
 } from 'lucide-react';
+import { OfficialWhatsAppLogo } from './OfficialSocialIcons';
 
 interface PortfolioSectionProps {
   projects: Project[];
@@ -199,18 +200,21 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
         <div className="mt-14 bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-xl sm:text-2xl font-black text-white">
-              Gostou dos nossos trabalhos?
+              Gostou dos nossos trabalhos na WFA Metais?
             </h3>
             <p className="text-slate-400 text-sm mt-1 max-w-lg">
-              Podemos executar seu projeto com a mesma qualidade, cronograma rigoroso e orçamento sem custos surpresa.
+              Podemos executar seu projeto com a mesma qualidade, resistência, cronograma rigoroso e orçamento sem custos surpresa.
             </p>
           </div>
-          <button
-            onClick={() => onOpenLeadModal()}
-            className="shrink-0 px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 text-slate-950 font-black text-sm shadow-xl shadow-orange-500/25 transition-all hover:scale-105 cursor-pointer"
+          <a
+            href="https://wa.me/558499637378?text=Ol%C3%A1%20WFA%20Metais!%20Gostei%20dos%20projetos%20do%20portf%C3%B3lio%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+            target="_blank"
+            rel="noreferrer"
+            className="shrink-0 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-sm shadow-xl shadow-emerald-950/40 transition-all hover:scale-105 cursor-pointer"
           >
-            Agendar Visita Técnica com a WFA
-          </button>
+            <OfficialWhatsAppLogo className="w-5 h-5" />
+            Solicitar Orçamento no WhatsApp
+          </a>
         </div>
 
       </div>
@@ -294,16 +298,15 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
             )}
 
             <div className="flex gap-3 pt-4 border-t border-slate-800">
-              <button
-                onClick={() => {
-                  const s = selectedProject.category;
-                  setSelectedProject(null);
-                  onOpenLeadModal(s);
-                }}
-                className="flex-1 py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm"
+              <a
+                href={`https://wa.me/558499637378?text=${encodeURIComponent(`Olá WFA Metais! Vi o projeto "${selectedProject.title}" no seu portfólio e gostaria de solicitar um orçamento semelhante.`)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg"
               >
-                Agendar Visita Técnica Deste Tipo de Serviço
-              </button>
+                <OfficialWhatsAppLogo className="w-5 h-5" />
+                Solicitar Orçamento Deste Serviço no WhatsApp
+              </a>
             </div>
           </div>
         </div>

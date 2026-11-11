@@ -146,19 +146,23 @@ async function startServer() {
       return res.status(400).json({ error: 'Mensagem inválida' });
     }
 
-    const systemInstruction = `Você é o Assistente Virtual Oficial da "WFA MultiServiços", empresa liderada por Fernando Franzo, prestador de serviços especialista com mais de 10 anos de experiência em:
-1. Manutenção Elétrica: instalações, quadros de distribuição, iluminação, tomadas, disjuntores, chuveiros, laudos e padrão de entrada.
-2. Manutenção Mecânica: corretiva e preventiva de motores, bombas, esteiras, redutores, compressores e maquinário geral.
-3. Manutenção Hidráulica: vazamentos em geral, troca de canos, desentupimentos, caixas d'água, torneiras, registros, esgoto e pressurizadores.
-4. Soldagem Especializada: solda TIG, MIG/MAG e eletrodo revestido, portões, estruturas metálicas, grades, corrimãos e conserto de peças.
-5. Alvenaria e Reformas: construção de muros, paredes, reboco, contrapiso, assentamento de pisos e porcelanatos, reformas e acabamentos.
+    const systemInstruction = `Você é o Assistente Virtual Oficial da "WFA METAIS - Serralheria em Geral", liderada pelo proprietário Wellington Silva Nascimento, especialista com comprovada excelência em:
+1. Grades: fabricação, reforma e instalação de grades de proteção para janelas, muros e fachadas com acabamento de alta resistência e segurança.
+2. Portões: portões basculantes, deslizantes, pivotantes, automáticos e manuais em ferro e aço tubular galvanizado.
+3. Estruturas Metálicas: montagem de coberturas, galpões, mezaninos, pergolados metálicos e vigamento estrutural.
+4. Soldas em Geral: soldagem profissional TIG, MIG/MAG e eletrodo revestido para reparos urgentes e montagens pesadas.
+5. Serviços Personalizados: projetos especiais sob medida em ferro, aço, serralheria artística, corrimãos, guarda-corpos e manutenções técnicas.
+
+Slogan da empresa: "Qualidade, Resistência e Compromisso com você!"
+Contato / WhatsApp oficial: (84) 99637-7378
+Instagram: @wellingtonsilvanascimento419
+E-mail: wellingtonsilvanascimento419@gmail.com
 
 Instruções fundamentais:
-- Responda sempre em Português do Brasil com tom profissional, prestativo, confiante e ágil.
+- Responda sempre em Português do Brasil com tom profissional, solícito, confiante e ágil.
 - Seja objetivo e claro (1 a 3 parágrafos curtos).
-- Se o usuário relatar uma emergência (ex: fumaça no quadro elétrico, cano estourado inundando casa, portão caído), oriente o primeiro passo de segurança (ex: desligar disjuntor geral ou registro de água) e instrua a chamar imediatamente pelo botão do WhatsApp de emergência!
-- Quando apropriado, informe que os orçamentos da WFA são transparentes, com garantia do serviço, emissão de nota/recibo e atendimento pontual.
-- Convide o cliente a enviar fotos pelo WhatsApp ou agendar uma visita técnica sem compromisso com a WFA.`;
+- Destaque que a WFA Metais prioriza qualidade, durabilidade das peças e acabamento refinado.
+- Sempre oriente o cliente a solicitar orçamento sem compromisso e a enviar fotos ou medidas pelo WhatsApp (84) 99637-7378 para que Wellington Silva Nascimento possa avaliar e fornecer um orçamento rápido.`;
 
     // Try Gemini API if available
     if (ai) {
@@ -171,7 +175,7 @@ Instruções fundamentais:
           },
         });
 
-        const replyText = response.text || 'Olá! Como posso ajudar você hoje com seus reparos ou reformas?';
+        const replyText = response.text || 'Olá! Como posso ajudar você hoje com seu projeto de serralheria ou metalurgia?';
         return res.json({ reply: replyText });
       } catch (err: any) {
         console.error('Erro ao chamar Gemini:', err?.message || err);
@@ -183,22 +187,20 @@ Instruções fundamentais:
     const lower = message.toLowerCase();
     let fallbackReply = '';
 
-    if (lower.includes('eletric') || lower.includes('luz') || lower.includes('chuveiro') || lower.includes('disjuntor') || lower.includes('curto') || lower.includes('tomada')) {
-      fallbackReply = 'Na parte de Elétrica, a WFA realiza desde troca de disjuntores, chuveiros e fiação até montagem e adequação completa de quadros de distribuição com segurança e padrão técnico. Para casos urgentes de curto ou cheiro de queimado, desligue o disjuntor geral e nos chame no WhatsApp para atendimento prioritário!';
-    } else if (lower.includes('hidraul') || lower.includes('vazamento') || lower.includes('cano') || lower.includes('agua') || lower.includes('água') || lower.includes('torneira') || lower.includes('esgoto')) {
-      fallbackReply = 'Em Hidráulica, a WFA atende localização e conserto de vazamentos, substituição de tubulações, instalação e limpeza de caixas d\'água, registros e pressurizadores. Se houver vazamento contínuo, feche o registro geral e clique no botão do WhatsApp da WFA para agendarmos uma visita rápida!';
-    } else if (lower.includes('solda') || lower.includes('portao') || lower.includes('portão') || lower.includes('grade') || lower.includes('ferro') || lower.includes('estrutura')) {
-      fallbackReply = 'A WFA trabalha com soldagem profissional TIG, MIG e eletrodo para recuperação e fabricação de portões basculantes, grades, corrimãos, suportes e estruturas metálicas com acabamento de primeira e alta resistência mecânica. Envie fotos da peça pelo WhatsApp para avaliarmos!';
-    } else if (lower.includes('alvenaria') || lower.includes('obra') || lower.includes('reforma') || lower.includes('piso') || lower.includes('muro') || lower.includes('reboco') || lower.includes('azulejo')) {
-      fallbackReply = 'Nossos serviços de alvenaria cobrem reformas completas, construção de muros, paredes, reboco, contrapiso, colocação de pisos e porcelanatos com nivelamento perfeito. A WFA fornece lista detalhada de materiais e cronograma de execução!';
-    } else if (lower.includes('mecanic') || lower.includes('motor') || lower.includes('bomba') || lower.includes('maquina') || lower.includes('máquina') || lower.includes('rolamento')) {
-      fallbackReply = 'Em Manutenção Mecânica, a WFA realiza revisão preventiva e corretiva de motores elétricos, bombas d\'água, esteiras, redutores e equipamentos mecânicos comerciais e industriais. Efetuamos troca de rolamentos, alinhamento e lubrificação técnica.';
-    } else if (lower.includes('orçamento') || lower.includes('orcamento') || lower.includes('preco') || lower.includes('preço') || lower.includes('valor') || lower.includes('quanto custa') || lower.includes('visita')) {
-      fallbackReply = 'Os serviços da WFA contam com transparência e garantia formal! Para avaliação no seu imóvel, agendamos uma visita técnica presencial. Clique no botão "Agendar Visita Técnica" no site ou nos envie uma mensagem no WhatsApp!';
-    } else if (lower.includes('garantia') || lower.includes('nota') || lower.includes('recibo') || lower.includes('confia')) {
-      fallbackReply = 'Todos os serviços da WFA contam com garantia formal de mão de obra, emissão de Nota Fiscal ou recibo profissional, cumprimento rigoroso de prazos e cumprimento das normas técnicas brasileiras (ABNT/NR10).';
+    if (lower.includes('portao') || lower.includes('portão') || lower.includes('basculante') || lower.includes('deslizante')) {
+      fallbackReply = 'Na WFA METAIS, fabricamos e reformamos portões basculantes, deslizantes e pivotantes sob medida, com perfis reforçados, solda de alta resistência e pintura protetiva. Envie as dimensões do seu vão no WhatsApp (84) 99637-7378 para receber seu orçamento rápido com Wellington Silva Nascimento!';
+    } else if (lower.includes('grade') || lower.includes('janela') || lower.includes('protecao') || lower.includes('proteção')) {
+      fallbackReply = 'Fabricamos grades de proteção sob medida para janelas, portas e muros, unindo segurança patrimonial, estética e alta durabilidade contra intempéries. Envie fotos ou medidas pelo WhatsApp (84) 99637-7378!';
+    } else if (lower.includes('estrutura') || lower.includes('galpao') || lower.includes('galpão') || lower.includes('mezanino') || lower.includes('cobertura')) {
+      fallbackReply = 'A WFA METAIS executa estruturas metálicas completas: coberturas, mezaninos, galpões e suportes industriais com cálculo e travamento preciso. Fale com Wellington no WhatsApp (84) 99637-7378 para orçarmos sua obra.';
+    } else if (lower.includes('solda') || lower.includes('soldagem') || lower.includes('tig') || lower.includes('mig') || lower.includes('eletrodo')) {
+      fallbackReply = 'Trabalhamos com soldas em geral (MIG/MAG, TIG e Eletrodo Revestido) para recuperação de peças, portões quebrados, dobradiças, trilhos e estruturas de aço. Chame Wellington no WhatsApp (84) 99637-7378 para atendimento rápido!';
+    } else if (lower.includes('personalizado') || lower.includes('sob medida') || lower.includes('corrimão') || lower.includes('corrimao') || lower.includes('guarda-corpo')) {
+      fallbackReply = 'Desenvolvemos serviços personalizados em serralheria: corrimãos, guarda-corpos, suportes especiais e peças sob projeto. Nos envie seu desenho ou ideia no WhatsApp (84) 99637-7378!';
+    } else if (lower.includes('orçamento') || lower.includes('orcamento') || lower.includes('preco') || lower.includes('preço') || lower.includes('valor') || lower.includes('quanto custa')) {
+      fallbackReply = 'Os orçamentos da WFA METAIS são transparentes e detalhados. Clique no botão de WhatsApp para falar diretamente com Wellington Silva Nascimento no (84) 99637-7378 e receba sua proposta sem custos surpresa!';
     } else {
-      fallbackReply = 'Olá! Sou o assistente da WFA MultiServiços. Somos especialistas em Elétrica, Mecânica, Hidráulica, Soldagem e Alvenaria. Você precisa de um reparo emergencial, quer agendar uma visita técnica ou tirar uma dúvida sobre seu projeto? Fale comigo ou clique no botão do WhatsApp para falar diretamente com nossa equipe!';
+      fallbackReply = 'Olá! Sou o assistente da WFA METAIS (Serralheria em Geral), liderada por Wellington Silva Nascimento. Somos especialistas em Grades, Portões, Estruturas Metálicas, Soldas em Geral e Serviços Personalizados. "Qualidade, Resistência e Compromisso com você!". Como podemos te atender hoje? Fale conosco direto no WhatsApp: (84) 99637-7378!';
     }
 
     return res.json({ reply: fallbackReply });
@@ -289,7 +291,7 @@ Instruções fundamentais:
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`WFA MultiServiços running at http://localhost:${PORT}`);
+    console.log(`WFA METAIS running at http://localhost:${PORT}`);
   });
 }
 
