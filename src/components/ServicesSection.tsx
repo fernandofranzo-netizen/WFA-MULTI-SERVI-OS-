@@ -64,7 +64,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
     const text = encodeURIComponent(
       `Olá WFA Metais! Gostaria de solicitar um orçamento para o serviço de ${service.name}.`
     );
-    window.open(`https://wa.me/558499637378?text=${text}`, '_blank');
+    window.open(`https://wa.me/5584996737378?text=${text}`, '_blank');
   };
 
   const filteredServices = activeTab === 'todos' 
@@ -94,7 +94,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               onClick={() => setActiveTab('todos')}
               className={`px-4 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer ${
                 activeTab === 'todos'
-                  ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 shadow-md shadow-orange-500/20'
+                  ? 'bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-950 font-black shadow-md shadow-yellow-500/20'
                   : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
               }`}
             >
@@ -106,7 +106,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 onClick={() => setActiveTab(srv.id)}
                 className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer ${
                   activeTab === srv.id
-                    ? 'bg-slate-800 text-white border-2 border-orange-500'
+                    ? 'bg-slate-800 text-white border-2 border-yellow-400'
                     : 'bg-slate-800/60 text-slate-400 hover:bg-slate-800 hover:text-slate-200'
                 }`}
               >
@@ -136,12 +136,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
                 
                 {/* Badge top-right */}
-                <div className="absolute top-3 right-3 bg-slate-900/90 backdrop-blur-md border border-slate-700/80 text-amber-400 text-xs font-bold px-2.5 py-1 rounded-md shadow">
+                <div className="absolute top-3 right-3 bg-slate-900/90 backdrop-blur-md border border-slate-700/80 text-yellow-400 text-xs font-bold px-2.5 py-1 rounded-md shadow">
                   {service.badge}
                 </div>
 
                 {/* Service Icon Pill (rendered when image does not have an integrated graphic banner) */}
-                {service.id !== 'eletrica' && (
+                {service.id !== 'eletrica' && service.id !== 'mecanica' && (
                   <div className="absolute bottom-3 left-4 flex items-center gap-2 bg-slate-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-700">
                     {getIcon(service.id)}
                     <span className="text-xs font-bold text-white uppercase tracking-wider">

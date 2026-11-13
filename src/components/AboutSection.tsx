@@ -18,7 +18,7 @@ interface AboutSectionProps {
 export const AboutSection: React.FC<AboutSectionProps> = () => {
   const openWhatsApp = () => {
     const text = encodeURIComponent('Olá Wellington! Acessei o site da WFA Metais e gostaria de falar sobre um projeto de serralheria/portão/estrutura.');
-    window.open(`https://wa.me/558499637378?text=${text}`, '_blank');
+    window.open(`https://wa.me/5584996737378?text=${text}`, '_blank');
   };
 
   return (
@@ -28,10 +28,10 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           
           {/* Left Column: Portrait of Wellington Silva Nascimento & Credentials */}
           <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md rounded-3xl overflow-hidden bg-slate-950 border-2 border-amber-500/40 p-3 shadow-2xl shadow-blue-950/40">
+            <div className="relative mx-auto max-w-md rounded-3xl overflow-hidden bg-slate-950 border-2 border-yellow-500/40 p-3 shadow-2xl shadow-blue-950/40">
               
               {/* Logo Badge */}
-              <div className="absolute top-5 right-5 z-20 bg-slate-950/95 border border-amber-500/60 rounded-xl p-1 shadow-xl flex items-center justify-center px-2.5">
+              <div className="absolute top-5 right-5 z-20 bg-slate-950/95 border border-yellow-500/60 rounded-xl p-1 shadow-xl flex items-center justify-center px-2.5">
                 <img
                   src="/assets/aistudio/image_dc0dbf4b.png"
                   alt="Logotipo WFA METAIS"
@@ -41,18 +41,18 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
 
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
                 <img
-                  src="/assets/aistudio/IMG-20261109-WA0123_fabed3be.jpg"
+                  src="/assets/aistudio/image_3794ec9d_1efb893f.jpg"
                   alt="Wellington Silva Nascimento - WFA Metais Serralheria"
                   className="w-full h-full object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
                 
-                <div className="absolute bottom-4 left-4 right-4 bg-slate-950/85 backdrop-blur-md p-3 rounded-xl border border-amber-500/30">
-                  <div className="inline-block px-2.5 py-0.5 rounded-lg bg-amber-400 text-slate-950 text-xs font-black uppercase mb-1">
+                <div className="absolute bottom-4 left-4 right-4 bg-slate-950/85 backdrop-blur-md p-3 rounded-xl border border-yellow-500/30">
+                  <div className="inline-block px-2.5 py-0.5 rounded-lg bg-yellow-400 text-slate-950 text-xs font-black uppercase mb-1">
                     Proprietário & Especialista
                   </div>
                   <h3 className="text-xl font-black text-white">Wellington Silva Nascimento</h3>
-                  <p className="text-xs text-amber-300 font-semibold">
+                  <p className="text-xs text-yellow-300 font-semibold">
                     WFA METAIS • Serralheria em Geral
                   </p>
                 </div>
@@ -62,10 +62,10 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               <div className="mt-3 p-3 bg-slate-900/90 rounded-2xl border border-slate-800 flex items-center justify-around gap-3">
                 {/* Official WhatsApp */}
                 <a
-                  href="https://wa.me/558499637378?text=Ol%C3%A1%20Wellington!%20Gostaria%20de%20um%20or%C3%A7amento."
+                  href="https://wa.me/5584996737378?text=Ol%C3%A1%20Wellington!%20Gostaria%20de%20um%20or%C3%A7amento."
                   target="_blank"
                   rel="noreferrer"
-                  title="WhatsApp Oficial: (84) 99637-7378"
+                  title="WhatsApp Oficial: (84) 99673-7378"
                   aria-label="WhatsApp Oficial"
                   className="w-12 h-12 rounded-2xl bg-slate-950 border border-slate-800 hover:border-emerald-500/60 p-2 flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all"
                 >
@@ -170,7 +170,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center gap-2.5 shadow-xl shadow-emerald-950/50 transition-all cursor-pointer group"
               >
                 <OfficialWhatsAppLogo className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                Falar no WhatsApp: (84) 99637-7378
+                Falar no WhatsApp: (84) 99673-7378
               </button>
             </div>
           </div>

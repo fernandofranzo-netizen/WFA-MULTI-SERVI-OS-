@@ -74,9 +74,9 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
           <div className="mt-6 md:mt-0 flex flex-wrap gap-1.5 bg-slate-900/80 p-1.5 rounded-xl border border-slate-800">
             <button
               onClick={() => setActiveCategory('todos')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-black transition-all cursor-pointer ${
                 activeCategory === 'todos'
-                  ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 shadow-md shadow-orange-500/20'
+                  ? 'bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-950 shadow-md shadow-yellow-500/20'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -86,9 +86,9 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-black transition-all cursor-pointer ${
                   activeCategory === cat
-                    ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 shadow-md shadow-orange-500/20'
+                    ? 'bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-950 shadow-md shadow-yellow-500/20'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -207,7 +207,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
             </p>
           </div>
           <a
-            href="https://wa.me/558499637378?text=Ol%C3%A1%20WFA%20Metais!%20Gostei%20dos%20projetos%20do%20portf%C3%B3lio%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+            href="https://wa.me/5584996737378?text=Ol%C3%A1%20WFA%20Metais!%20Gostei%20dos%20projetos%20do%20portf%C3%B3lio%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
             target="_blank"
             rel="noreferrer"
             className="shrink-0 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-sm shadow-xl shadow-emerald-950/40 transition-all hover:scale-105 cursor-pointer"
@@ -299,7 +299,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
 
             <div className="flex gap-3 pt-4 border-t border-slate-800">
               <a
-                href={`https://wa.me/558499637378?text=${encodeURIComponent(`Olá WFA Metais! Vi o projeto "${selectedProject.title}" no seu portfólio e gostaria de solicitar um orçamento semelhante.`)}`}
+                href={`https://wa.me/5584996737378?text=${encodeURIComponent(`Olá WFA Metais! Vi o projeto "${selectedProject.title}" no seu portfólio e gostaria de solicitar um orçamento semelhante.`)}`}
                 target="_blank"
                 rel="noreferrer"
                 className="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg"

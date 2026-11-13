@@ -1,12 +1,13 @@
 import { ServiceDetail, Project, Testimonial, BlogPost, SEOSettings, Lead } from '../types';
 
 export const WFA_LOGO_URL = '/assets/aistudio/image_dc0dbf4b.png';
-export const WFA_BANNER_IMAGE = '/assets/aistudio/IMG-20261109-WA0123_fabed3be.jpg';
+export const WFA_BANNER_IMAGE = '/assets/aistudio/image_3794ec9d_1efb893f.jpg';
+export const WFA_PROPRIETARIO_IMAGE = '/assets/aistudio/image_3794ec9d_1efb893f.jpg';
 export const WFA_PROPRIETARIO = 'Wellington Silva Nascimento';
 export const WFA_EMAIL = 'wellingtonsilvanascimento419@gmail.com';
 export const WFA_INSTAGRAM = 'wellingtonsilvanascimento419';
-export const WFA_PHONE = '(84) 99637-7378';
-export const WFA_PHONE_CLEAN = '558499637378';
+export const WFA_PHONE = '(84) 99673-7378';
+export const WFA_PHONE_CLEAN = '5584996737378';
 
 export const SERVICES_DATA: ServiceDetail[] = [
   {
@@ -59,7 +60,7 @@ export const SERVICES_DATA: ServiceDetail[] = [
       'Travamento intermitente de esteiras ou eixos rotativos'
     ],
     typicalTime: '2h a 3 dias',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80'
+    image: '/assets/aistudio/IMG-20261107-WA0028_88cbce11.jpg'
   },
   {
     id: 'hidraulica',
@@ -416,6 +417,6 @@ export const DEFAULT_SEO_SETTINGS: SEOSettings = {
   googleBusinessName: 'WFA Metais - Serralheria em Geral',
   googleMapsLink: 'https://maps.google.com/?q=WFA+Metais',
   serviceArea: 'Atendimento Especializado em Serralheria e Manutenção',
-  phoneWhatsapp: '+55 (84) 99637-7378',
+  phoneWhatsapp: '+55 (84) 99673-7378',
   emailContact: 'wellingtonsilvanascimento419@gmail.com'
 };

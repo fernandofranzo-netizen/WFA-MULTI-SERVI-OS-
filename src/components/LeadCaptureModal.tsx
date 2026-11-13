@@ -126,7 +126,7 @@ export const LeadCaptureModal: React.FC<LeadCaptureModalProps> = ({
           `📝 *Detalhes:* ${description || 'Solicitação de orçamento'}`
         );
 
-        window.open(`https://wa.me/558499637378?text=${text}`, '_blank');
+        window.open(`https://wa.me/5584996737378?text=${text}`, '_blank');
       }
     } catch (error) {
       console.error('Erro ao enviar lead:', error);
@@ -311,7 +311,7 @@ export const LeadCaptureModal: React.FC<LeadCaptureModalProps> = ({
                       required
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="(84) 99637-7378"
+                      placeholder="(84) 99673-7378"
                       className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500"
                     />
                   </div>

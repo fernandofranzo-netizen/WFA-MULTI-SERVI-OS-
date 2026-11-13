@@ -154,7 +154,7 @@ async function startServer() {
 5. Serviços Personalizados: projetos especiais sob medida em ferro, aço, serralheria artística, corrimãos, guarda-corpos e manutenções técnicas.
 
 Slogan da empresa: "Qualidade, Resistência e Compromisso com você!"
-Contato / WhatsApp oficial: (84) 99637-7378
+Contato / WhatsApp oficial: (84) 99673-7378
 Instagram: @wellingtonsilvanascimento419
 E-mail: wellingtonsilvanascimento419@gmail.com
 
@@ -162,7 +162,7 @@ Instruções fundamentais:
 - Responda sempre em Português do Brasil com tom profissional, solícito, confiante e ágil.
 - Seja objetivo e claro (1 a 3 parágrafos curtos).
 - Destaque que a WFA Metais prioriza qualidade, durabilidade das peças e acabamento refinado.
-- Sempre oriente o cliente a solicitar orçamento sem compromisso e a enviar fotos ou medidas pelo WhatsApp (84) 99637-7378 para que Wellington Silva Nascimento possa avaliar e fornecer um orçamento rápido.`;
+- Sempre oriente o cliente a solicitar orçamento sem compromisso e a enviar fotos ou medidas pelo WhatsApp (84) 99673-7378 para que Wellington Silva Nascimento possa avaliar e fornecer um orçamento rápido.`;
 
     // Try Gemini API if available
     if (ai) {
@@ -188,19 +188,19 @@ Instruções fundamentais:
     let fallbackReply = '';
 
     if (lower.includes('portao') || lower.includes('portão') || lower.includes('basculante') || lower.includes('deslizante')) {
-      fallbackReply = 'Na WFA METAIS, fabricamos e reformamos portões basculantes, deslizantes e pivotantes sob medida, com perfis reforçados, solda de alta resistência e pintura protetiva. Envie as dimensões do seu vão no WhatsApp (84) 99637-7378 para receber seu orçamento rápido com Wellington Silva Nascimento!';
+      fallbackReply = 'Na WFA METAIS, fabricamos e reformamos portões basculantes, deslizantes e pivotantes sob medida, com perfis reforçados, solda de alta resistência e pintura protetiva. Envie as dimensões do seu vão no WhatsApp (84) 99673-7378 para receber seu orçamento rápido com Wellington Silva Nascimento!';
     } else if (lower.includes('grade') || lower.includes('janela') || lower.includes('protecao') || lower.includes('proteção')) {
-      fallbackReply = 'Fabricamos grades de proteção sob medida para janelas, portas e muros, unindo segurança patrimonial, estética e alta durabilidade contra intempéries. Envie fotos ou medidas pelo WhatsApp (84) 99637-7378!';
+      fallbackReply = 'Fabricamos grades de proteção sob medida para janelas, portas e muros, unindo segurança patrimonial, estética e alta durabilidade contra intempéries. Envie fotos ou medidas pelo WhatsApp (84) 99673-7378!';
     } else if (lower.includes('estrutura') || lower.includes('galpao') || lower.includes('galpão') || lower.includes('mezanino') || lower.includes('cobertura')) {
-      fallbackReply = 'A WFA METAIS executa estruturas metálicas completas: coberturas, mezaninos, galpões e suportes industriais com cálculo e travamento preciso. Fale com Wellington no WhatsApp (84) 99637-7378 para orçarmos sua obra.';
+      fallbackReply = 'A WFA METAIS executa estruturas metálicas completas: coberturas, mezaninos, galpões e suportes industriais com cálculo e travamento preciso. Fale com Wellington no WhatsApp (84) 99673-7378 para orçarmos sua obra.';
     } else if (lower.includes('solda') || lower.includes('soldagem') || lower.includes('tig') || lower.includes('mig') || lower.includes('eletrodo')) {
-      fallbackReply = 'Trabalhamos com soldas em geral (MIG/MAG, TIG e Eletrodo Revestido) para recuperação de peças, portões quebrados, dobradiças, trilhos e estruturas de aço. Chame Wellington no WhatsApp (84) 99637-7378 para atendimento rápido!';
+      fallbackReply = 'Trabalhamos com soldas em geral (MIG/MAG, TIG e Eletrodo Revestido) para recuperação de peças, portões quebrados, dobradiças, trilhos e estruturas de aço. Chame Wellington no WhatsApp (84) 99673-7378 para atendimento rápido!';
     } else if (lower.includes('personalizado') || lower.includes('sob medida') || lower.includes('corrimão') || lower.includes('corrimao') || lower.includes('guarda-corpo')) {
-      fallbackReply = 'Desenvolvemos serviços personalizados em serralheria: corrimãos, guarda-corpos, suportes especiais e peças sob projeto. Nos envie seu desenho ou ideia no WhatsApp (84) 99637-7378!';
+      fallbackReply = 'Desenvolvemos serviços personalizados em serralheria: corrimãos, guarda-corpos, suportes especiais e peças sob projeto. Nos envie seu desenho ou ideia no WhatsApp (84) 99673-7378!';
     } else if (lower.includes('orçamento') || lower.includes('orcamento') || lower.includes('preco') || lower.includes('preço') || lower.includes('valor') || lower.includes('quanto custa')) {
-      fallbackReply = 'Os orçamentos da WFA METAIS são transparentes e detalhados. Clique no botão de WhatsApp para falar diretamente com Wellington Silva Nascimento no (84) 99637-7378 e receba sua proposta sem custos surpresa!';
+      fallbackReply = 'Os orçamentos da WFA METAIS são transparentes e detalhados. Clique no botão de WhatsApp para falar diretamente com Wellington Silva Nascimento no (84) 99673-7378 e receba sua proposta sem custos surpresa!';
     } else {
-      fallbackReply = 'Olá! Sou o assistente da WFA METAIS (Serralheria em Geral), liderada por Wellington Silva Nascimento. Somos especialistas em Grades, Portões, Estruturas Metálicas, Soldas em Geral e Serviços Personalizados. "Qualidade, Resistência e Compromisso com você!". Como podemos te atender hoje? Fale conosco direto no WhatsApp: (84) 99637-7378!';
+      fallbackReply = 'Olá! Sou o assistente da WFA METAIS (Serralheria em Geral), liderada por Wellington Silva Nascimento. Somos especialistas em Grades, Portões, Estruturas Metálicas, Soldas em Geral e Serviços Personalizados. "Qualidade, Resistência e Compromisso com você!". Como podemos te atender hoje? Fale conosco direto no WhatsApp: (84) 99673-7378!';
     }
 
     return res.json({ reply: fallbackReply });
@@ -295,4 +295,7 @@ Instruções fundamentais:
   });
 }
 
-startServer();
+startServer().catch((err) => {
+  console.error('Failed to start server:', err);
+  process.exit(1);
+});

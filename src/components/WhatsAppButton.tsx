@@ -15,7 +15,7 @@ export const WhatsAppButton: React.FC = () => {
 
     const baseText = customMessage || 'Olá WFA Metais! Acessei seu site e gostaria de solicitar um orçamento.';
     const text = encodeURIComponent(baseText);
-    window.open(`https://wa.me/558499637378?text=${text}`, '_blank');
+    window.open(`https://wa.me/5584996737378?text=${text}`, '_blank');
     setIsOpen(false);
   };
 
@@ -29,7 +29,7 @@ export const WhatsAppButton: React.FC = () => {
               <OfficialWhatsAppLogo className="w-8 h-8 shrink-0" />
               <div>
                 <strong className="text-white text-xs block">WhatsApp Oficial</strong>
-                <span className="text-[10px] text-emerald-400 font-semibold">(84) 99637-7378</span>
+                <span className="text-[10px] text-emerald-400 font-semibold">(84) 99673-7378</span>
               </div>
             </div>
             <button
@@ -91,7 +91,7 @@ export const WhatsAppButton: React.FC = () => {
       {/* Main Floating Trigger Button: Only Official Logomark */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        title="WhatsApp Oficial: (84) 99637-7378"
+        title="WhatsApp Oficial: (84) 99673-7378"
         aria-label="Abrir WhatsApp Oficial"
         className="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-emerald-950/80 hover:scale-110 active:scale-95 transition-all cursor-pointer group bg-transparent"
       >

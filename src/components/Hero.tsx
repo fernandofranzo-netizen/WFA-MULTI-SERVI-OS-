@@ -19,7 +19,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onSelectService }) => {
   const openWhatsApp = () => {
     const text = encodeURIComponent('Olá Wellington! Acessei o site da WFA Metais e gostaria de solicitar um orçamento para um serviço de serralheria.');
-    window.open(`https://wa.me/558499637378?text=${text}`, '_blank');
+    window.open(`https://wa.me/5584996737378?text=${text}`, '_blank');
   };
 
   const serviceChips = [
@@ -59,9 +59,15 @@ export const Hero: React.FC<HeroProps> = ({ onSelectService }) => {
               </span>
             </h1>
 
-            <p className="text-base sm:text-xl text-amber-300 font-semibold italic">
-              "Qualidade, Resistência e Compromisso com você!"
-            </p>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+              <p className="text-base sm:text-xl text-yellow-400 font-bold tracking-wide">
+                "Qualidade, Resistência e Compromisso com você!"
+              </p>
+              <span className="hidden sm:inline text-slate-600">•</span>
+              <p className="text-base sm:text-lg text-yellow-300 font-bold italic">
+                "Seu projeto em boas mãos!"
+              </p>
+            </div>
 
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Fabricação e manutenção especializada em <strong>Grades</strong>, <strong>Portões</strong>, <strong>Estruturas Metálicas</strong>, <strong>Soldas em Geral</strong> e <strong>Serviços Personalizados</strong> com acabamento fino, durabilidade e cumprimento rigoroso de prazos sob a responsabilidade de <strong>Wellington Silva Nascimento</strong>.
@@ -70,7 +76,7 @@ export const Hero: React.FC<HeroProps> = ({ onSelectService }) => {
             {/* Service quick chips mirroring the flyer */}
             <div className="pt-2">
               <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5 flex items-center justify-center lg:justify-start gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
                 Especialidades WFA METAIS:
               </p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
@@ -90,24 +96,28 @@ export const Hero: React.FC<HeroProps> = ({ onSelectService }) => {
               </div>
             </div>
 
-            {/* CTAs (Removed Agendar Visita Técnica button as requested) */}
+            {/* CTAs with WFA official WhatsApp badge style */}
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <button
                 onClick={openWhatsApp}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-xl shadow-emerald-950/60 transition-all hover:-translate-y-0.5 cursor-pointer group"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-2xl text-base font-black bg-slate-950 hover:bg-slate-900 text-white border-2 border-yellow-400 hover:border-yellow-300 shadow-xl shadow-yellow-500/10 transition-all hover:-translate-y-0.5 cursor-pointer group gap-3"
               >
-                <OfficialWhatsAppLogo className="w-6 h-6 mr-2.5 group-hover:scale-110 transition-transform" />
-                Solicitar Orçamento no WhatsApp: (84) 99637-7378
+                <div className="bg-emerald-500/20 p-1.5 rounded-full">
+                  <OfficialWhatsAppLogo className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                </div>
+                <span>
+                  Solicitar Orçamento: <strong className="text-yellow-400 font-mono tracking-wider ml-1">84 99673-7378</strong>
+                </span>
               </button>
             </div>
           </div>
 
           {/* Right Column: Visual Showcase Card with Official Wellington Silva Photo */}
           <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none rounded-3xl bg-slate-900/80 p-3 sm:p-4 border-2 border-amber-500/40 shadow-2xl shadow-blue-950/50 backdrop-blur-xl group hover:border-amber-400 transition-all duration-500">
+            <div className="relative mx-auto max-w-md lg:max-w-none rounded-3xl bg-slate-900/80 p-3 sm:p-4 border-2 border-yellow-500/40 shadow-2xl shadow-blue-950/50 backdrop-blur-xl group hover:border-yellow-400 transition-all duration-500">
               
               {/* Floating Official Company Logo Badge */}
-              <div className="absolute -top-3.5 -right-2 z-20 bg-slate-950/95 border-2 border-amber-500/70 rounded-2xl p-1.5 shadow-2xl shadow-black/80 flex items-center justify-center px-3 hover:scale-105 transition-transform">
+              <div className="absolute -top-3.5 -right-2 z-20 bg-slate-950/95 border-2 border-yellow-500/70 rounded-2xl p-1.5 shadow-2xl shadow-black/80 flex items-center justify-center px-3 hover:scale-105 transition-transform">
                 <img
                   src="/assets/aistudio/image_dc0dbf4b.png"
                   alt="Logotipo Oficial WFA METAIS"
@@ -118,20 +128,20 @@ export const Hero: React.FC<HeroProps> = ({ onSelectService }) => {
               {/* Official Photo of Wellington Silva Nascimento in uniform */}
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5] sm:aspect-square bg-slate-950 border border-slate-800">
                 <img
-                  src="/assets/aistudio/IMG-20261109-WA0123_fabed3be.jpg"
+                  src="/assets/aistudio/image_3794ec9d_1efb893f.jpg"
                   alt="Wellington Silva Nascimento - WFA Metais Serralheria"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none" />
 
-                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between bg-slate-950/90 backdrop-blur-md px-3.5 py-2 rounded-xl border border-amber-500/40">
+                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between bg-slate-950/90 backdrop-blur-md px-3.5 py-2 rounded-xl border border-yellow-500/40">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
                     <div>
                       <span className="text-xs font-black text-white tracking-wider block">
                         WELLINGTON SILVA NASCIMENTO
                       </span>
-                      <span className="text-[10px] text-amber-400 font-bold uppercase">
+                      <span className="text-[10px] text-yellow-400 font-bold uppercase">
                         WFA Metais • Serralheiro Responsável
                       </span>
                     </div>

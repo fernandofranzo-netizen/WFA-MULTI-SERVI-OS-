@@ -229,7 +229,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
                 </p>
               </div>
               <a
-                href="https://wa.me/558499637378?text=Ol%C3%A1%20WFA%20Metais!%20Li%20o%20artigo%20no%20blog%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                href="https://wa.me/5584996737378?text=Ol%C3%A1%20WFA%20Metais!%20Li%20o%20artigo%20no%20blog%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 text-white font-black text-xs shrink-0 cursor-pointer shadow-lg shadow-emerald-950/40"

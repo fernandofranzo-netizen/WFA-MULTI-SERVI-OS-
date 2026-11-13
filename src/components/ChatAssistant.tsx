@@ -111,7 +111,7 @@ export const ChatAssistant: React.FC = () => {
     const text = encodeURIComponent(
       `Olá WFA Metais! Estava no site tirando dúvidas sobre "${recentQueries || 'solicitação de orçamento'}" e gostaria de continuar o atendimento com Wellington Silva Nascimento.`
     );
-    window.open(`https://wa.me/558499637378?text=${text}`, '_blank');
+    window.open(`https://wa.me/5584996737378?text=${text}`, '_blank');
   };
 
   return (

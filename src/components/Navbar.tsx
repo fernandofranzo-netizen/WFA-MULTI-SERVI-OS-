@@ -32,7 +32,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const openWhatsAppDirect = () => {
     const text = encodeURIComponent('Olá Wellington! Acessei o site da WFA Metais e gostaria de solicitar um orçamento para um serviço de serralheria.');
-    window.open(`https://wa.me/558499637378?text=${text}`, '_blank');
+    window.open(`https://wa.me/5584996737378?text=${text}`, '_blank');
   };
 
   return (
@@ -58,11 +58,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center space-x-2.5 ml-auto">
             {/* Official WhatsApp */}
             <a
-              href="https://wa.me/558499637378"
+              href="https://wa.me/5584996737378"
               target="_blank"
               rel="noreferrer"
               className="hover:scale-110 active:scale-95 transition-transform"
-              title="WhatsApp Oficial: (84) 99637-7378"
+              title="WhatsApp Oficial: (84) 99673-7378"
               aria-label="WhatsApp Oficial"
             >
               <OfficialWhatsAppLogo className="w-4 h-4" />
@@ -92,11 +92,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <span className="text-slate-700">|</span>
             <a
-              href="tel:+5584996377378"
+              href="tel:+5584996737378"
               className="flex items-center text-slate-300 hover:text-white transition-colors"
             >
               <Phone className="w-3 h-3 mr-1 text-amber-400" />
-              <span className="font-semibold">(84) 99637-7378</span>
+              <span className="font-semibold">(84) 99673-7378</span>
             </a>
             <span className="text-slate-700">|</span>
             <button

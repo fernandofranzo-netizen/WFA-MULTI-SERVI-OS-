@@ -53,10 +53,10 @@ export const Footer: React.FC<FooterProps> = ({
 
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://wa.me/558499637378"
+                href="https://wa.me/5584996737378"
                 target="_blank"
                 rel="noreferrer"
-                title="WhatsApp Oficial: (84) 99637-7378"
+                title="WhatsApp Oficial: (84) 99673-7378"
                 aria-label="WhatsApp Oficial"
                 className="hover:scale-110 active:scale-95 transition-transform"
               >
@@ -168,13 +168,13 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <div className="space-y-2.5">
               <a
-                href="https://wa.me/558499637378"
+                href="https://wa.me/5584996737378"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2.5 text-emerald-400 hover:text-emerald-300 font-bold text-sm group"
               >
                 <OfficialWhatsAppLogo className="w-5 h-5 shrink-0 group-hover:scale-110 transition-transform" />
-                <span>(84) 99637-7378</span>
+                <span>(84) 99673-7378</span>
               </a>
 
               <a
@@ -197,7 +197,7 @@ export const Footer: React.FC<FooterProps> = ({
 
               <div className="pt-2">
                 <a
-                  href="https://wa.me/558499637378?text=Ol%C3%A1%20WFA%20Metais!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                  href="https://wa.me/5584996737378?text=Ol%C3%A1%20WFA%20Metais!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full py-2.5 px-3 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2"
@@ -215,7 +215,7 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="mt-12 pt-8 border-t border-slate-900 text-[11px] text-slate-600 space-y-2">
           <p className="font-semibold text-slate-500">Termos de Pesquisa Local (Google SEO):</p>
           <p className="leading-relaxed">
-            WFA Metais • Serralheria em Geral • Wellington Silva Nascimento • Grades de proteção para janelas e muros • Fabricação e reforma de portões basculantes e de correr • Estruturas metálicas e mezaninos • Soldas em geral MIG TIG e eletrodo • Serviços personalizados em ferro e aço • Contato WhatsApp (84) 99637-7378 • Orçamento rápido e transparente.
+            WFA Metais • Serralheria em Geral • Wellington Silva Nascimento • Grades de proteção para janelas e muros • Fabricação e reforma de portões basculantes e de correr • Estruturas metálicas e mezaninos • Soldas em geral MIG TIG e eletrodo • Serviços personalizados em ferro e aço • Contato WhatsApp (84) 99673-7378 • Orçamento rápido e transparente.
           </p>
         </div>
       </div>
